@@ -1,0 +1,55 @@
+image: node:20.10.0
+
+stages:
+  - lint
+  - unittest
+  - buildAndDeploy
+
+run-prettier-check:
+  stage: lint
+  script:
+    - npm install
+    - npm run pretty-check
+  only:
+    - merge_requests
+run-eslint:
+  stage: lint
+  script:
+    - npm install
+    - npm run lint
+  only:
+    - merge_requests
+
+run-unit-test-frontend:
+  stage: unittest
+  script:
+    - cd frontend
+    - yarn install
+    - yarn test
+  only:
+    - merge_requests
+
+run-unit-test-backend:
+  stage: unittest
+  script:
+    - cd backend
+    - yarn install
+    - yarn test
+  only:
+    - merge_requests
+
+deploy-to-staging:
+  stage: buildAndDeploy
+  image: google/cloud-sdk:latest
+  script:
+    - ./release.sh primaryv2 europe-west1 formpress-staging ""
+  when: manual
+
+deploy-to-production:
+  stage: buildAndDeploy
+  image: google/cloud-sdk:latest
+  script:
+    - ./release.sh primaryv2 europe-west1 formpress-production "-prod"
+  when: manual
+  only:
+    - master

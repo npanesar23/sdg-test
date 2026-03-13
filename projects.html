@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | SD&amp;G Contracting</title>
+  <meta name="description" content="Browse SD&amp;G Contracting's project portfolio — landscaping, hardscaping, excavation, fencing, and more across Cornwall, Ontario." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="brand_assets/SD&G Contracting Logo.png" />
+  <style>
+    .project-card {
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <img src="brand_assets/SD&G Contracting Logo.png" alt="SD&amp;G Contracting" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="financing.html">Financing</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="merch.html">Merch</a></li>
+      <li><a href="book.html" class="btn btn-primary">Book Consultation</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="nav-mobile">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="projects.html" class="active">Projects</a>
+  <a href="financing.html">Financing</a>
+  <a href="contact.html">Contact</a>
+  <a href="merch.html">Merch</a>
+  <a href="book.html" class="btn btn-primary">Book Consultation</a>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80');"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="container page-hero-content">
+    <span class="page-hero-label">Our Portfolio</span>
+    <h1 class="page-hero-title">Project Gallery</h1>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="section" style="padding-bottom: 0;">
+  <div class="container text-center" style="max-width:720px; margin-bottom:56px;">
+    <span class="section-label">Our Work</span>
+    <h2 class="section-title">Transforming Properties Across Eastern Ontario</h2>
+    <div class="divider divider--center"></div>
+    <p class="section-subtitle">From residential makeovers to large-scale commercial projects — here's a look at the quality and range of work we deliver for every client.</p>
+  </div>
+</section>
+
+<!-- PROJECT GALLERY WITH FILTERS -->
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="landscaping">Landscaping</button>
+      <button class="filter-btn" data-filter="hardscaping">Hardscaping</button>
+      <button class="filter-btn" data-filter="excavation">Excavation</button>
+      <button class="filter-btn" data-filter="snow">Snow Removal</button>
+      <button class="filter-btn" data-filter="fencing">Fencing</button>
+      <button class="filter-btn" data-filter="concrete">Concrete</button>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- Hardscaping -->
+      <div class="project-card" data-category="hardscaping">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80" alt="Natural Stone Patio" loading="lazy" />
+        <div class="project-card-overlay">
+          <div class="project-card-info">
+            <div class="project-card-category">Hardscaping</div>
+            <div class="project-card-title">Natural Stone Patio &amp; Steps</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Landscaping -->
+      <div class="project-card" data-category="landscaping">
+        <img src="https://images.pexels.com/photos/34030968/pexels-photo-34030968.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Full Landscape Redesign" loading="lazy" />
+        <div class="project-card-overlay">
+          <div class="project-card-info">
+            <div class="project-card-category">Landscaping</div>
+            <div class="project-card-title">Residential Landscape Transformation</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Excavation -->
+      <div class="project-card" data-category="excavation">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80" alt="Commercial Site Excavation" loading="lazy" />
+        <div class="project-card-overlay">
+          <div class="project-card-info">
+            <div class="project-card-category">Excavation</div>
+            <div class="project-card-title">Commercial Site Preparation</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fencing -->
+      <div class="project-card" data-category="fencing">
+        <img src="https://images.pexels.com/photos/6750192/pexels-photo-6750192.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Privacy Fence" loading="lazy" />
+        <div class="project-card-overlay">
+          <div class="project-card-info">
+            <div class="project-card-category">Fencing</div>
+            <div class="project-card-title">Cedar Privacy Fence Installation</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hardscaping -->
+      <div class="project-card" data-category="hardscaping">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80" alt="Interlock Driveway" loading="lazy" />
+        <div class="project-card-overlay">
+          <div class="project-card-info">
+            <div class="project-card-category">Hardscaping</div>
+            <div class="project-card-title">Interlock Driveway &amp; Walkway</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Landscaping -->
+      <div class="project-card" data-category="landscaping">
+        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700&q=80" alt="Garden Design" loading="lazy" />
+        <div class="project-card-overlay">
+          <div class="project-card-info">
+            <div class="project-card-category">Landscaping</div>
+            <div class="project-card-title">Perennial Garden &amp; Mulch Beds</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Snow Removal -->
+      <div class="project-card" data-category="snow">
+        <img src="https://images.pexels.com/photos/6952450/pexels-photo-6952450.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Snow Removal" loading="lazy" />
+        <div class="project-card-overlay">
+          <div class="project-card-info">
+            <div class="project-card-category">Snow Removal</div>
+            <div class="project-card-title">Commercial Lot Winter Maintenance</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Concrete -->
+      <div class="project-card" data-category="concrete">
+        <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Concrete Driveway" loading="lazy" />
+        <div class="project-card-overlay">
+          <div class="project-card-info">
+            <div class="project-card-category">Concrete</div>
+            <div class="project-card-title">Poured Concrete Driveway &amp; Apron</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hardscaping -->
+      <div class="project-card" data-category="hardscaping">
+        <img src="https://images.unsplash.com/photo-1605117882932-f9e32b03fea9?w=700&q=80" alt="Retaining Wall" loading="lazy" />
+        <div class="project-card-overlay">
+          <div class="project-card-info">
+            <div class="project-card-category">Hardscaping</div>
+            <div class="project-card-title">Retaining Wall &amp; Grade Correction</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Landscaping -->
+      <div class="project-card" data-category="landscaping">
+        <img src="https://images.pexels.com/photos/5231236/pexels-photo-5231236.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Lawn Installation" loading="lazy" />
+        <div class="project-card-overlay">
+          <div class="project-card-info">
+            <div class="project-card-category">Landscaping</div>
+            <div class="project-card-title">Sod Installation &amp; Full Lawn Renewal</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fencing -->
+      <div class="project-card" data-category="fencing">
+        <img src="https://images.pexels.com/photos/9581523/pexels-photo-9581523.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Vinyl Fencing" loading="lazy" />
+        <div class="project-card-overlay">
+          <div class="project-card-info">
+            <div class="project-card-category">Fencing</div>
+            <div class="project-card-title">Vinyl Fence &amp; Gate System</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Excavation -->
+      <div class="project-card" data-category="excavation">
+        <img src="https://images.pexels.com/photos/6245621/pexels-photo-6245621.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Grading Work" loading="lazy" />
+        <div class="project-card-overlay">
+          <div class="project-card-info">
+            <div class="project-card-category">Excavation</div>
+            <div class="project-card-title">Residential Grading &amp; Drainage</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO PLACEHOLDER NOTE -->
+<section class="section section--gray" style="padding: 60px 0;">
+  <div class="container text-center">
+    <p style="font-size:15px; color:var(--gray-text); max-width:600px; margin:0 auto;">
+      <strong>Note:</strong> The images above are placeholder photos. Contact us to request a portfolio of our actual completed projects in the Cornwall area.
+    </p>
+    <div style="margin-top:28px;">
+      <a href="contact.html" class="btn btn-dark">Request Portfolio Photos</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Like What You See? <span>Let's Talk.</span></h2>
+    <p>Book your free consultation today and we'll show you how SD&amp;G can transform your property.</p>
+    <div class="cta-buttons">
+      <a href="book.html" class="btn btn-primary btn-lg">Book Free Consultation</a>
+      <a href="services.html" class="btn btn-outline btn-lg">View Our Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="brand_assets/SD&G Contracting Logo.png" alt="SD&amp;G Contracting" />
+        <p>Cornwall, Ontario's trusted contractor for landscaping, hardscaping, excavation, and property services since 2017.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/sdgcontract/" target="_blank" rel="noopener" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="https://www.instagram.com/sdgcontracts/" target="_blank" rel="noopener" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="book.html">Book Consultation</a></li>
+          <li><a href="financing.html">Financing</a></li>
+          <li><a href="merch.html">Merch</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#landscaping">Landscaping</a></li>
+          <li><a href="services.html#hardscaping">Hardscaping</a></li>
+          <li><a href="services.html#excavation">Excavation</a></li>
+          <li><a href="services.html#snow">Snow Removal</a></li>
+          <li><a href="services.html#fencing">Fencing</a></li>
+          <li><a href="services.html#concrete">Concrete</a></li>
+          <li><a href="services.html#maintenance">Property Maintenance</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 6.75z" /></svg>
+          <a href="tel:6133639166">613-363-9166</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>
+          <a href="mailto:Info@sdgcontracts.com">Info@sdgcontracts.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>
+          <span>406-841 Sydney St, Unit 7<br />Cornwall, Ontario K6H 7L2</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 SD&amp;G Contracting. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="contact.html">Contact</a>
+        <a href="book.html">Book Online</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

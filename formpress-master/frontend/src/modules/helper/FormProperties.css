@@ -1,0 +1,323 @@
+.formPropertiesMessage {
+  background-color: #fffcdd;
+  color: #646464;
+  font-size: 14px;
+  text-align: center;
+  padding: 15px 20px;
+}
+
+.tag-controls form {
+  display: flex;
+  width: 97%;
+}
+
+.tag-controls input[type='text'] {
+  width: 98%;
+  padding: 5px;
+  border-radius: 4px;
+  font-family: Montserrat;
+  border: solid 2px #eceaea;
+  background-color: #ffffff;
+  color: #000000;
+  outline: 0;
+  height: 30px;
+}
+
+.tag-controls input[type='text']:hover {
+  border: solid 2px #c9c9c9;
+}
+
+.tag-controls input[type='submit'] {
+  font-family: Montserrat;
+  display: block;
+  font-size: 16px;
+  width: 15%;
+  height: 30px;
+  border: none;
+  outline: none;
+  float: right;
+  color: #fff;
+  background: #719fbd;
+  cursor: pointer;
+  margin-left: 2px;
+  border-radius: 4px;
+}
+.tag-controls input[type='submit']:hover {
+  background-color: #5682a1;
+}
+
+.tags-wrapper {
+  padding: 10px;
+}
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tags-list:not(:empty) {
+  padding-bottom: 7px;
+}
+
+.tags-list > .tag {
+  background: rgb(168, 227, 57);
+  color: #fff;
+  padding: 4px;
+  font-size: 16px;
+  border-radius: 3px;
+  margin: 3px 3px 2px 0;
+}
+
+.tags-list > .tag > .tag-close {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0 5px;
+  padding: 0 2px 0 2px;
+}
+
+.tags-label {
+  font-family: Montserrat;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.tag {
+  display: block;
+  max-height: 25px;
+}
+
+.formProperties > .infernal > .element {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.formProperties > .infernal > .elementRadio > .input {
+  clear: both;
+}
+.formProperties > .infernal > .elementRadio > .input > ul {
+  padding: 0;
+  margin: 0;
+}
+
+.formProperties > .infernal > .elementRadio > .input > ul > li {
+  display: block;
+  padding: 5px;
+}
+.formProperties > .infernal > .elementRadio > .input > ul > li > label {
+  margin-left: 5px;
+}
+
+.formProperties > .autoPageBreakForm {
+  padding-bottom: 1rem;
+}
+
+.formProperties > .autoPageBreakForm {
+  background: unset;
+}
+/*.formProperties > .infernal:hover,*/
+/*.formProperties > .tags-wrapper:hover {*/
+/*  background: gainsboro;*/
+/*  border-radius: 3px;*/
+/*}*/
+
+.formProperties > .infernal:focus-within,
+.formProperties > .tags-wrapper:focus-within {
+  background: gainsboro;
+  border-radius: 3px;
+}
+
+.formProperties > .autoPageBreakForm > .element.elementTextBox > .input > input,
+.formProperties
+  > .autoPageBreakForm
+  > .element.elementTextArea
+  > .input
+  > input {
+  padding: 0.2rem 1rem;
+  width: 70%;
+}
+
+.formProperties > .autoPageBreakForm > .element.elementTextBox,
+.formProperties > .autoPageBreakForm > .element.elementTextArea {
+  padding: 0.2rem 2rem;
+}
+
+.formProperties > .autoPageBreakForm > .element.elementNumberE {
+  padding: 0.2rem 2rem;
+}
+.formProperties > .autoPageBreakForm > .element.elementNumberE > .input {
+  width: 20%;
+  clear: both;
+  margin-top: 5px;
+}
+.formProperties
+  > .autoPageBreakForm
+  > .element.elementNumberE
+  > .input
+  > input {
+  width: 100%;
+}
+
+.formProperties > .autoPageBreakForm > .element.elementCheckbox .checkboxCover {
+  padding: 10px 0px 0px 5px;
+}
+
+.formProperties
+  > .autoPageBreakForm.autoPageBreakDisabled
+  > .element.elementTextArea,
+.formProperties
+  > .autoPageBreakForm.autoPageBreakDisabled
+  > .element.elementTextBox,
+.formProperties
+  > .autoPageBreakForm.autoPageBreakDisabled
+  > .element.elementNumberE {
+  display: none;
+}
+
+.formProperties .popover-container > svg {
+  color: #113952;
+}
+
+.formProperties .autoPageBreakTooltip > .popover-container {
+  float: right;
+  position: relative;
+  top: 17px;
+  left: -173px;
+}
+
+.formProperties
+  .autoPageBreakTooltip
+  > .popover-container:hover
+  > .popoverText {
+  width: 12rem;
+  height: fit-content;
+  top: -42px;
+  left: -86px;
+  width: 12rem;
+  padding: 4px 3px;
+  border-radius: 4px;
+  position: absolute;
+  background-color: #113952;
+  color: #fff;
+  text-align: center;
+  z-index: 9999;
+  font-size: 12px;
+  display: block;
+}
+
+.formProperties .evaluateFormTooltip .popover-container {
+  float: right;
+  position: relative;
+  top: 73px;
+  left: -170px;
+}
+
+.formProperties .evaluateFormTooltip .popover-container:hover > .popoverText {
+  width: 18rem;
+  height: fit-content;
+  top: -70px;
+  left: -86px;
+  width: 12rem;
+  padding: 4px 3px;
+  border-radius: 4px;
+  position: absolute;
+  background-color: #113952;
+  color: #fff;
+  text-align: center;
+  z-index: 9999;
+  font-size: 12px;
+  display: block;
+}
+
+.formProperties .privateFormTooltip .popover-container {
+  float: right;
+  position: relative;
+  top: 10px;
+  left: -155px;
+}
+
+.formProperties .privateFormTooltip .popover-container:hover > .popoverText {
+  width: 12rem;
+  height: fit-content;
+  top: -105px;
+  left: -130px;
+}
+
+.formProperties .replyToTooltip .popover-container {
+  float: right;
+  position: relative;
+  top: -21px;
+  left: -77px;
+}
+
+.formProperties .replyToTooltip .popover-container:hover > .popoverText {
+  width: 18rem;
+  height: fit-content;
+  top: -100px;
+  left: -86px;
+  width: 12rem;
+  padding: 4px 3px;
+  border-radius: 4px;
+  position: absolute;
+  background-color: #113952;
+  color: #fff;
+  text-align: center;
+  z-index: 9999;
+  font-size: 12px;
+  display: block;
+}
+
+.formProperties .replyToSelectWrap {
+  font-family: 'Montserrat', sans-serif;
+  padding: 10px;
+}
+.formProperties .replyToSelect {
+  width: 100%;
+  padding: 5px;
+  border-radius: 4px;
+  font-family: Montserrat;
+  border: solid 2px #eceaea;
+  background-color: #ffffff;
+  color: #000000;
+  outline: 0;
+  height: 30px;
+}
+.formProperties .replyToSelectLabel {
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  font-weight: 500 !important;
+}
+.formProperties > .adv-settings {
+  padding: 20px 10px 10px 10px;
+}
+.formProperties > .adv-settings > .adv-settings-summary {
+  cursor: pointer;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0.5rem;
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.13);
+}
+
+.formProperties > .adv-settings > .adv-settings-summary > .adv-settings-icon {
+  color: #1c5c85;
+}
+
+.formProperties
+  > .adv-settings
+  > .adv-settings-summary::-webkit-details-marker {
+  display: none;
+  color: transparent;
+  font-size: 0;
+}
+.formProperties > .adv-settings > .adv-settings-summary::marker {
+  display: none;
+  color: transparent;
+  font-size: 0;
+}
+
+.formProperties > .adv-settings > .adv-settings-row {
+  background: #f0f0f0;
+  display: flex;
+  border: 1px solid gainsboro;
+}
