@@ -1,0 +1,14 @@
+<%
+let textedEmail = ''
+const formpressText = 'FORMPRESS Open Source Data Collection\r\n\r\n'
+const helloText = `Welcome to FormPress! You're almost there.\r\n`
+const textBody = `Enter the following code to verify your email address: \r\n`
+const code = `${VERIFYCODE}`
+
+textedEmail += formpressText
+textedEmail += helloText
+textedEmail += textBody
+textedEmail += code
+%>
+<%- textedEmail %>
+<%- include ("footerText.ejs") %>

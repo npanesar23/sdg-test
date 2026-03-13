@@ -1,0 +1,118 @@
+- [DONE] Implement Basic structure 
+- [Done] Builder: Drag & Drop from elements to form itself
+  -- DRAG DROP working almost super duper good
+- [DONE] Fix DD so that form elements can be added to any part of the form
+ -- [DONE] While dragging over form, there should be an indication of where form element will be put
+- [DONE] Implement docker-compose based development environment including mysql
+- [DONE] Implement basic mysql pooled connectivity + migrations system
+- [DONE] Migration created to store form objects
+- [DONE] Backend: Implement backend + database to handle form save events, simple express.js app
+  Implement endpoint to list forms and form details
+- [DONE] Builder: save form using backend
+- [DONE] Setup pipelines CI/CD
+- [DONE] Implement UnitTests for React components and run them on CI/CD pipelines
+- [DONE] Backend: Implement form renderer to render form into html
+    and host the form in a url :DOMAIN/form/:FORM_ID
+    -- Rendered form should not have React, it should be lean
+        so required fields, and other computation should be done with a lean + raw JS code
+- [DONE] Impove backend renderer so that it should render into a proper form with proper POST target
+- [DONE] Backend: Handle submissions
+- [DONE] Add react-router and implement main menu, builder, forms, data 
+- [DONE] Submissions: List received responses
+- [DONE] Refactor api endpoints to look like RESTfull api
+- [DONE] Implement frontend api wrapper
+- [DONE] Form List: List saved forms and allow user to click form for editing
+- [DONE] Backend: Send responses to user email, if configured use sendgrid, if not, use system mail command
+  -- Basic sendgrid is configured, more TODO added for MVP
+- [DONE] Basic structure for login, authentication and UI
+- [DONE] Frontend&Backend: Implement logi  auth and make sure only owners can edit forms
+  -- This can be done by a middleware which compares if actions being made are from owner of resources
+  -- Add backend Unit tests for this security feature
+- [DONE] Allow users to change question labels using contenteditable
+- [DONE] Investigate content editable to allow users to edit form titles, put form title in builder
+- [DONE] Allow users to change button text using contenteditable
+- [DONE] Store last edited form in local storage, and if form_id url param is empty, redirect to last edited form
+- [DONE] Fix basic auth and JWT collision
+- [DONE] staging db auth using cloudsql proxy
+- [DONE] Use user_id from auth context instead of hard coded 1
+- [DONE] Use Renderer to allow users to change form and element properties on right hand side
+  - Form Properties submission notification email
+  - Question properties
+    -- Define editable properties on question level with Renderer.js format
+       For now include required fields
+    -- Define JS injection logic, include seperate functionality if used such as required.js if any of the questions use required
+- [DONE] Put SendGrid api key in .env file and add it to .gitignore, load it via dotenv
+  so that we can remove hardcoded api key from repo. Usefull for making it opensource
+- [DONE] Code css for header profile section
+- [DONE] Code css for Forms section
+- [DONE] Styling:  design everything and apply styling so it looks cool Thanks Soner Kaya ksonerkaya@gmail.com!
+- [DONE] Make everything opensource with a suitable license
+- [DONE] Code css for Data section
+- [DONE] Code homepage for not logged in users
+- [DONE] Implement Publish button functionality
+  -- Versionify forms, each click to publish, if different to last released version, should cause a version increment
+    --We can store new version of the form in a new table `form_published` and last version id in `form` table
+    -- on Preview, render latest saved form
+    -- on Publish, render latest published version
+- [DONE] Allow questions to be sorted
+- [DONE] Implement vertical tabs in builder, via react-router if possible
+- [DONE] Put elements/question props /form props using react-router
+- [DONE] Put left panel elements/form/question props into vertical tab context
+VNTTD:
+
+- Builder: allow users to import forms into their websites using a JS file
+
+MVP:
+- Small fixes
+  -- Use react-router for submission viewer so that submissions can be linked directly from forms page
+  -- Show unread/read status on Data page
+  -- Show number of unread submissions on forms page
+  -- To calculate if form should be published, ie changes are made since last publish
+    use a deep equality check on actual form properties instead of doing an form.updated_at !== publishedForm.created_at
+  -- Ask user to save if there are unsaved progress in form editor
+  -- Imrove notification when publish is needed
+  -- Store form version on submission table, when showing responses, use relevant form version to render responses
+  -- Improve contentEditable to prevent stuff like &nbsp;
+  -- Put a maximum length for Form titles
+  -- Put a maximum length for form field labels
+
+- Add more form items: textarea, dropdown, checkbox, radio, file upload
+  -- Work on customizing form elements such as, label at top, required..
+  -- File uploads should go to a cloud storage, for now, Google Cloud Storage
+
+- Setup k8s and deploy to production
+  -- Put required k8s files/scripts in k8s folder
+- Form themes: Make sure at least 1 theme exists for forms
+- Email notifications should use a formatted html/text version
+- API: Add a common way of sending options for request, such as
+  orderby, pagination. This should be handled by a common function to build relevant SQL
+- Data:
+  - Only refetch submissions list if prop read was changed. 
+- Add security check that only owner can view submissions
+  Currently only user_id param is compared to the user_id in jwt token, this allows other users to query
+  submissions of another user if form_id is known
+- [DONE] Implement SignUp page along with login page
+- Implement forgot password feature
+- A under construction page as homepage
+- A nice homepage along with instructions to install properly and description of basic functionality
+- Do not transpile react components for form render each time on production
+  -- also, use redis cache to render forms from cached versions, probably form version id can be used for caching
+
+- Implement helm chart with commented values.yaml
+- Implement terraform scripts to automatically install with every dependency, Database, Redis, file upload bucket, service accounts
+
+
+BackLog:
+- Templates: Implement template mechanism List templates and allow users to clone
+- Add Multiple form Themes and allow quick switch between them
+- Decide basic paid plans
+- Implement a payment gateway (braintree) and accept paid subscriptions
+- Implement functional tests (Using selenium, create a form and do a submission and verify it worked)
+
+- Go Live and start experimenting with paid advertising
+- Integrations: 
+  -- Payment gateways so that people can sell stuff with forms (Lets ignore this part for sometime)
+  -- Google drive, dropbox, so that responses can go automatically to other places
+  -- Webhook integration, so that when responses received, it can be forwarded to customer urls
+- API: a very nice to have, not very near (Current way, we can expose internally used REST API just as is)
+- Think about open source contributions licensing

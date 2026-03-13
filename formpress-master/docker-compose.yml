@@ -1,0 +1,89 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: formpress-mysql
+    working_dir: /application
+    volumes:
+      - .:/application
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=formpress
+      - MYSQL_USER=formpress
+      - MYSQL_PASSWORD=formpress
+    ports:
+      - '3003:3306'
+    healthcheck:
+      test: mysql $$MYSQL_DATABASE --user=$$MYSQL_USER --password=$$MYSQL_PASSWORD --silent --execute "SELECT 1;"
+      interval: 1s
+      timeout: 1s
+      retries: 30
+  backend:
+    build:
+      context: ./backend/
+      dockerfile: Dockerfile.development
+    container_name: formpress-backend
+    command: 'yarn start-dev'
+    working_dir: /src
+    volumes:
+      - ./backend:/src
+      - ./frontend:/frontend
+    environment:
+      - JWT_SECRET=${JWT_SECRET}
+      - MYSQL_DATABASE=formpress
+      - MYSQL_HOST=mysql
+      - MYSQL_USER=formpress
+      - MYSQL_PASSWORD=formpress
+      - NODE_ENV=production
+      - SERVER_PORT=3001
+      - SENDGRID_API_KEY=${SENDGRID_API_KEY}
+      - EMAIL_DOMAIN=${EMAIL_DOMAIN}
+      - GOOGLE_CREDENTIALS_CLIENT_ID=${GOOGLE_CREDENTIALS_CLIENT_ID}
+      - GOOGLE_CREDENTIALS_CLIENT_SECRET=${GOOGLE_CREDENTIALS_CLIENT_SECRET}
+      - GOOGLE_SERVICE_ACCOUNT_CREDENTIALS=${GOOGLE_SERVICE_ACCOUNT_CREDENTIALS}
+      - FILE_UPLOAD_BUCKET=${FILE_UPLOAD_BUCKET}
+      - PUBLIC_BUCKET=${PUBLIC_BUCKET}
+      - ADMINEMAIL=${ADMINEMAIL}
+      - ADMINPASSWORD=${ADMINPASSWORD}
+      - TINYMCE_API_KEY=${TINYMCE_API_KEY}
+      - TALKYARD_SECRET=${TALKYARD_SECRET}
+      - TALKYARD_SERVER=${TALKYARD_SERVER}
+      - FE_BACKEND=${FE_BACKEND}
+      - FE_EMAIL_DOMAIN=${FE_EMAIL_DOMAIN}
+      - FE_FRONTEND=${FE_FRONTEND}
+      - FE_GOOGLE_CREDENTIALS_CLIENT_ID=${FE_GOOGLE_CREDENTIALS_CLIENT_ID}
+      - FE_HOMEURL=${FE_HOMEURL}
+      - FE_TINYMCE_API_KEY=${FE_TINYMCE_API_KEY}
+      - FE_GOOGLE_MAPS_KEY=${FE_GOOGLE_MAPS_KEY}
+      - FE_UPGRADE_LINK=${FE_UPGRADE_LINK}
+      - FE_ZAPIER_APP_CLIENT_ID=${FE_ZAPIER_APP_CLIENT_ID}
+      - OAUTH_CLIENTS=${OAUTH_CLIENTS}
+      - GCP_PROJECT_ID=${GCP_PROJECT_ID}
+      - RECAPTCHA_SITE_KEY=${RECAPTCHA_SITE_KEY}
+    ports:
+      - '3001:3001'
+    links:
+      - 'mysql'
+    depends_on:
+      mysql:
+        condition: service_healthy
+  frontend:
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile.development
+    container_name: formpress-frontend
+    command: 'yarn start-compose'
+    working_dir: /src
+    environment:
+      - REACT_APP_FE_BACKEND=${FE_BACKEND}
+      - REACT_APP_FE_FRONTEND=${FE_FRONTEND}
+    volumes:
+      - ./frontend:/src
+      - /src/node_modules
+    ports:
+      - '3000:3000'
+    stdin_open: true
+    links:
+      - 'backend'
+    depends_on:
+      - 'backend'
