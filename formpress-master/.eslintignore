@@ -1,8 +1,0 @@
-frontend/src/runtime
-k8s
-backend/test
-backend/script/transformed
-frontend/src/__tests__
-frontend/public
-*.test.js
-node_modules
